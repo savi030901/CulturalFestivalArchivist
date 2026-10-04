@@ -1,5 +1,6 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+const API_BASE =
+  "https://culturalfestivalarchivist-backend.onrender.com";
 function Dashboard() {
   const defaultFestivals = [
     { category: "Ritual" },
@@ -10,15 +11,29 @@ function Dashboard() {
     { category: "Ritual" },
   ];
 
-  const [uploads] = useState(() => {
+  const [uploads, setUploads] = useState([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const loadUploads = async () => {
     try {
-      return JSON.parse(
-        localStorage.getItem("festivalUploads") || "[]"
-      );
-    } catch {
-      return [];
+      const response = await fetch(`${API_BASE}/uploads`);
+
+      if (!response.ok) {
+        throw new Error("Could not load uploads");
+      }
+
+      const data = await response.json();
+      setUploads(data);
+    } catch (error) {
+      console.error("Dashboard loading error:", error);
+    } finally {
+      setLoading(false);
     }
-  });
+  };
+
+  loadUploads();
+}, []);
 
   const allFestivals = [
     ...defaultFestivals,
@@ -48,7 +63,14 @@ function Dashboard() {
 
   const maxValue =
     Math.max(...categoryData.map((item) => item[1]), 1);
-
+if (loading) {
+  return (
+    <main className="dashboard-page">
+      <h1>📊 Archive Dashboard</h1>
+      <p>Loading dashboard data...</p>
+    </main>
+  );
+}
   return (
     <main className="dashboard-page">
 
