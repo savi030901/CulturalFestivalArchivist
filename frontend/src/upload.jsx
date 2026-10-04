@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
-const API_BASE = "http://localhost:8000";
-
+const API_BASE = "https://culturalfestivalarchivist.onrender.com";
 function Upload() {
   const [file, setFile] = useState(null);
   const [festivalName, setFestivalName] = useState("");
