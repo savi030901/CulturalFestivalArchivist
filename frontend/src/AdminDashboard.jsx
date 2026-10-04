@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://cultural-festival-backend-bf80.onrender.com";
+
 
 function AdminDashboard() {
   const [festivals, setFestivals] = useState([]);
@@ -200,15 +201,13 @@ function AdminDashboard() {
             <p>View machine learning results and model metrics.</p>
 
             <button
-              onClick={() =>
-                window.open("http://localhost:8501", "_blank")
-              }
-              style={buttonStyle}
-            >
-              Open ML Dashboard →
-            </button>
-          </div>
-
+  onClick={() =>
+    window.open("https://culturalfestivalarchivist-r9cpvrzqgijdnropuhr4m6.streamlit.app", "_blank")
+  }
+  style={buttonStyle}
+>
+  Open ML Dashboard →
+</button>
           {/* Refresh */}
           <div style={cardStyle}>
             <h3>🔄 Refresh Statistics</h3>
