@@ -1,0 +1,32 @@
+[
+  {
+    "id": "74b644d6bba84393ab2e35e4b0ba9705",
+    "name": "diwali",
+    "location": "chennai",
+    "category": "rituals",
+    "description": "diwali celebration",
+    "fileName": "WhatsApp Image 2026-09-30 at 2.19.07 PM (2).jpeg",
+    "fileType": "image/jpeg",
+    "mediaUrl": "/media/d9ed5dc05197405aa9a1774edefb5a53.jpeg"
+  },
+  {
+    "id": "ce86a9d7b8ed4fa185ba74d1ce5c3782",
+    "name": "diwali",
+    "location": "chennai",
+    "category": "rituals",
+    "description": "diwali celebration",
+    "fileName": "WhatsApp Image 2026-09-30 at 2.19.07 PM (2).jpeg",
+    "fileType": "image/jpeg",
+    "mediaUrl": "/media/5abaa6646c424a1b8a5c041c83e12e7d.jpeg"
+  },
+  {
+    "id": "4ad7d0a6af1045c2832d422609d14306",
+    "name": "onam",
+    "location": "kerala",
+    "category": "Decoration",
+    "description": "enjoyment",
+    "fileName": "WhatsApp Image 2026-09-30 at 2.19.09 PM (1).jpeg",
+    "fileType": "image/jpeg",
+    "mediaUrl": "/media/7cb4dce1dda94f30b8c586cb8ebdd92b.jpeg"
+  }
+]
