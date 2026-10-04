@@ -1,8 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 
 const API_BASE = "https://cultural-festival-backend-bf80.onrender.com";
-
 
 function AdminDashboard() {
   const [festivals, setFestivals] = useState([]);
@@ -201,13 +199,18 @@ function AdminDashboard() {
             <p>View machine learning results and model metrics.</p>
 
             <button
-  onClick={() =>
-    window.open("https://culturalfestivalarchivist-r9cpvrzqgijdnropuhr4m6.streamlit.app", "_blank")
-  }
-  style={buttonStyle}
->
-  Open ML Dashboard →
-</button>
+              onClick={() =>
+                window.open(
+                  "https://culturalfestivalarchivist-r9cpvrzqgijdnropuhr4m6.streamlit.app",
+                  "_blank"
+                )
+              }
+              style={buttonStyle}
+            >
+              Open ML Dashboard →
+            </button>
+          </div>
+
           {/* Refresh */}
           <div style={cardStyle}>
             <h3>🔄 Refresh Statistics</h3>
@@ -223,7 +226,9 @@ function AdminDashboard() {
         </div>
 
         {/* Recent Uploads */}
-        <h2 style={{ marginTop: "40px" }}>Recent Festival Uploads</h2>
+        <h2 style={{ marginTop: "40px" }}>
+          Recent Festival Uploads
+        </h2>
 
         {loading && <p>Loading records...</p>}
 
@@ -257,22 +262,48 @@ function AdminDashboard() {
               </thead>
 
               <tbody>
-                {[...festivals].reverse().slice(0, 5).map((item) => (
-                  <tr key={item.id}>
-                    <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>
-                      {item.name}
-                    </td>
-                    <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>
-                      {item.location}
-                    </td>
-                    <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>
-                      {item.category}
-                    </td>
-                    <td style={{ padding: "12px", borderBottom: "1px solid #eee" }}>
-                      {item.fileName}
-                    </td>
-                  </tr>
-                ))}
+                {[...festivals]
+                  .reverse()
+                  .slice(0, 5)
+                  .map((item) => (
+                    <tr key={item.id}>
+                      <td
+                        style={{
+                          padding: "12px",
+                          borderBottom: "1px solid #eee",
+                        }}
+                      >
+                        {item.name}
+                      </td>
+
+                      <td
+                        style={{
+                          padding: "12px",
+                          borderBottom: "1px solid #eee",
+                        }}
+                      >
+                        {item.location}
+                      </td>
+
+                      <td
+                        style={{
+                          padding: "12px",
+                          borderBottom: "1px solid #eee",
+                        }}
+                      >
+                        {item.category}
+                      </td>
+
+                      <td
+                        style={{
+                          padding: "12px",
+                          borderBottom: "1px solid #eee",
+                        }}
+                      >
+                        {item.fileName}
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
 
