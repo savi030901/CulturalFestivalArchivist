@@ -1,5 +1,5 @@
 import "./App.css";
-import Upload from "./Upload";
+import Upload from "./upload";
 import Gallery from "./Gallery";
 import Search from "./Search";
 import Login from "./Login";
