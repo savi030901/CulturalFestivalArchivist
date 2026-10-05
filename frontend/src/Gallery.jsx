@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_BASE = "https://culturalfestivalarchivist-backend.onrender.com";
-
+const API_BASE = "https://cultural-festival-backend-bf80.onrender.com";
 function Gallery() {
   const defaultFestivals = [
     {

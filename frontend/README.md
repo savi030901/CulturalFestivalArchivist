@@ -135,7 +135,7 @@ python -m uvicorn server:app --reload --port 8000
 Backend:
 
 ```text
-http://localhost:8000
+https://cultural-festival-backend-bf80.onrender.com
 ```
 
 ### 3. Start the Streamlit ML Dashboard

@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from "react";
-const API_BASE = "https://culturalfestivalarchivist-backend.onrender.com";
+
+const API_BASE = "https://cultural-festival-backend-bf80.onrender.com";
+
 function Upload() {
   const [file, setFile] = useState(null);
   const [festivalName, setFestivalName] = useState("");
@@ -11,7 +13,6 @@ function Upload() {
   const [loading, setLoading] = useState(false);
   const [loadingUploads, setLoadingUploads] = useState(true);
 
-  // Load saved uploads from the backend
   useEffect(() => {
     const loadUploads = async () => {
       try {
@@ -260,7 +261,7 @@ function Upload() {
       <section className="uploaded-section">
         <h2>Recently Added</h2>
 
-        {loadingUploads ? (
+             {loadingUploads ? (
           <p className="upload-help">Loading saved uploads...</p>
         ) : uploaded.length === 0 ? (
           <p className="upload-help">
@@ -304,3 +305,4 @@ function Upload() {
 }
 
 export default Upload;
+
