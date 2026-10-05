@@ -8,23 +8,25 @@ function AdminDashboard() {
   const [error, setError] = useState("");
 
   const loadFestivals = async () => {
-    try {
-      const response = await fetch(`${API_BASE}/uploads`);
+  try {
+    setLoading(true);
 
-      if (!response.ok) {
-        throw new Error("Could not load festival records.");
-      }
+    const response = await fetch(`${API_BASE}/uploads`);
 
-      const data = await response.json();
-      setFestivals(data);
-      setError("");
-    } catch (err) {
-      console.error("Dashboard loading error:", err);
-      setError("Backend connect aagala. FastAPI server-a check pannu.");
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error("Could not load festival records.");
     }
-  };
+
+    const data = await response.json();
+    setFestivals(data);
+    setError("");
+  } catch (err) {
+    console.error("Dashboard loading error:", err);
+    setError("Backend connect aagala. FastAPI server-a check pannu.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     loadFestivals();
